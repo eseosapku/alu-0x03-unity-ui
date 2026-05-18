@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+    public int scoreText;
     public float speed;
     public int health = 5;
     private int score;
