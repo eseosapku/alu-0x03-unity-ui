@@ -26,6 +26,14 @@ public class PlayerController : MonoBehaviour
         {
             WinText.enabled = false;
         }
+        if (LoseImage != null)
+        {
+            LoseImage.enabled = false;
+        }
+        if (LoseText != null)
+        {
+            LoseText.enabled = false;
+        }
     }
 
     // Update is called once per frame
@@ -67,6 +75,22 @@ public class PlayerController : MonoBehaviour
         {
            health = health - 1;
         }
+
+        if (health == 0) 
+        {
+            SetLoseText();
+            SetLoseImage();
+            if (LoseImage != null)
+            {
+                LoseImage.enabled = true;
+            }
+            if (LoseText != null)
+            {
+                LoseText.enabled = true;
+            }
+
+        }
+
         if (other.gameObject.CompareTag("Goal")) 
         {
             SetWinText();
@@ -97,13 +121,13 @@ public class PlayerController : MonoBehaviour
 
     void SetWinText()
     {
-        WinText.text = "You Win";
+        WinText.text = "You Win!";
         WinText.color = Color.black;
     }
 
     void SetLoseText()
     {
-        LoseText.text = "You Lose";
+        LoseText.text = "Game Over!";
         LoseText.color= Color.black;
     }
 

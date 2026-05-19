@@ -6196,7 +6196,7 @@ MonoBehaviour:
   WinImage: {fileID: 582842289}
   LoseImage: {fileID: 582842289}
   WinText: {fileID: 1936780757}
-  LoseText: {fileID: 0}
+  LoseText: {fileID: 1936780757}
   healthText: {fileID: 1449459621}
   scoreText: {fileID: 1525708340}
   speed: 10
