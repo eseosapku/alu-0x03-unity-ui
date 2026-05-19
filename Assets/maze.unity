@@ -2467,7 +2467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &582842288
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6193,6 +6193,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 005efdae0602c8844a5240493c54689f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WinImage: {fileID: 582842289}
+  LoseImage: {fileID: 582842289}
+  WinText: {fileID: 1936780757}
+  LoseText: {fileID: 0}
   healthText: {fileID: 1449459621}
   scoreText: {fileID: 1525708340}
   speed: 10
