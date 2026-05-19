@@ -6116,6 +6116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 005efdae0602c8844a5240493c54689f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthText: {fileID: 1449459621}
   scoreText: {fileID: 1525708340}
   speed: 10
   health: 5

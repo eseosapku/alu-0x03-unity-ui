@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    public Text healthText;
     public Text scoreText;
     public float speed;
     public int health = 5;
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         SetScoreText();
+        SetHealthText();
     }
 
     // Update is called once per frame
@@ -52,18 +54,23 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Trap"))
         {
            health = health - 1;
-            Debug.Log("Health: " + health); 
         }
         if (other.gameObject.CompareTag("Goal")) 
         {
             Debug.Log("You win!");
         }
         SetScoreText();
+        SetHealthText();
     }
 
     void SetScoreText() 
     {
         scoreText.text = "Score: " + score.ToString();
+    }
+
+    void SetHealthText()
+    {
+        healthText.text = "Health: " + health.ToString();
     }
 
 }
