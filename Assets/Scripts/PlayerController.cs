@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    public int scoreText;
+    public Text scoreText;
     public float speed;
     public int health = 5;
     private int score;
@@ -10,7 +11,7 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       
+        SetScoreText();
     }
 
     // Update is called once per frame
@@ -46,7 +47,6 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Pickup"))
         { 
             score = score + 1;
-            Debug.Log("Score: " + score);
             other.gameObject.SetActive(false);
         }
         if (other.gameObject.CompareTag("Trap"))
@@ -58,6 +58,12 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("You win!");
         }
+        SetScoreText();
+    }
+
+    void SetScoreText() 
+    {
+        scoreText.text = "Score: " + score.ToString();
     }
 
 }
