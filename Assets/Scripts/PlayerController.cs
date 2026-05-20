@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
@@ -78,6 +80,7 @@ public class PlayerController : MonoBehaviour
 
         if (health == 0) 
         {
+            StartCoroutine(LoadScene(3));
             SetLoseText();
             SetLoseImage();
             if (LoseImage != null)
@@ -103,8 +106,9 @@ public class PlayerController : MonoBehaviour
             {
                 WinText.enabled = true;
             }
+            StartCoroutine(LoadScene(3));
         }
-        
+
         SetScoreText();
         SetHealthText();
     }
@@ -139,6 +143,12 @@ public class PlayerController : MonoBehaviour
     void SetWinImage()
     {
         WinImage.color = Color.green;
+    }
+
+    IEnumerator LoadScene(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }
