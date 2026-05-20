@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
+    public void QuitMaze()
+    {
+        Application.Quit();
+        Debug.Log("Quit Game");
+        
+    }
     public void PlayMaze(int sceneID)
     {
         SceneManager.LoadScene(sceneID);
