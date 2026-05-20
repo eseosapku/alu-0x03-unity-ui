@@ -2,9 +2,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEditor.SearchService;
 
 public class PlayerController : MonoBehaviour
 {
+    public void PlayMaze()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+
+        {
+            SceneManager.LoadScene(0);
+        }
+    }
     public Image WinImage;
     public Image LoseImage;
     public Text WinText;
@@ -42,6 +51,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         PlayerMovement();
+        PlayMaze();
     }
 
     //this is the player movement method
